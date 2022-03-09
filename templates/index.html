@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Thyroid Disease Prediction</title>
+    </head>    
+    
+    <body>
+        <center>      
+
+        <h1 style="font-size: 40px; color: rgb(9, 9, 156); text-align: center;"> Thyroid Disease Prediction</h1>
+        <h2 style="font-size:25px;">This web application is made to predict Thyroid disease with the following parameters given</h2>
+        <p style="font-size: large; font-family:'Times New Roman'; background-color: rgb(136, 215, 247);">Fill the form and get your results</p> <br>
+
+
+        <form action='predict/' >
+        {% csrf_token %}
+            
+            <label style="font-size: large; background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="TSH">TSH value:</label>
+            <input style="font-size: 15; padding:5px 15px; margin:5px;" type="number" name="TSH" placeholder="enter" step="any"> <br><br>
+            <label style="font-size: large; background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="FTI">FTI value:</label>
+            <input style="font-size: 15; padding:5px 15px; margin:5px;" type="number" name="FTI" placeholder="enter" step="any"> <br><br>
+
+            <label style="font-size: large; background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="TT4">TT4 value:</label>
+            <input style="font-size: 15; padding:5px 15px; margin:5px;" type="number" name="TT4" placeholder="enter" step="any"> <br><br>
+
+            <label style="font-size: large; background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="T3">T3 value:</label>
+            <input style="font-size: 15; padding:5px 15px; margin:5px;" type="number" name="T3" placeholder="enter" step="any"> <br><br>
+           
+            <label style="background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="query_hypothyroid">Query_hypothyroid value :</label>
+            <select id="query_hypothyroid" name="query_hypothyroid" style="padding:5px 15px;margin: 10px 25px 15px 5px;">
+            <option value="text">Select</option>
+            <option value="1">True</option>
+            <option value="0">False</option></select>
+        
+            <label style="background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="on_thyroxine">On_thyroxine value :</label>
+            <select id="on_thyroxine" name="on_thyroxine" style="padding: 5px 15px;margin: 10px 25px 15px 5px;">
+            <option value="text">Select</option>
+            <option value="1">True</option>
+            <option value="0">False</option></select>
+
+            <label style="background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="sex">Sex :</label>
+            <select id="sex" name="sex" style="padding:5px 15px;margin: 10px 25px 15px 5px;">
+            <option value="text">Select</option>
+            <option value="1">Male</option>
+            <option value="0">Female</option></select> 
+
+            <label style="background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="pregnant">Pregnant :</label>
+            <select id="pregnant" name="pregnant" style="padding: 5px 15px;margin: 10px 25px 15px 5px;">
+            <option value="text">Select</option>
+            <option value="1">True</option>
+            <option value="0">False</option></select> 
+            
+            <label style="background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="psych">Psych :</label>
+            <select id="psych" name="psych" style="padding: 5px 15px;margin: 10px 25px 15px 5px;">
+            <option value="text">Select</option>
+            <option value="1">True</option>
+            <option value="0">False</option></select> <br><br><br>
+
+            <input type="submit" , value= 'Predict' style="font-size: larger; padding: 5px 15px;margin-top: 15px;"> <br><br></br>
+            <input type="reset" , value='Reset' style="padding: 5px 15px;margin-top: 15px;">
+        </form>
+       
+    </center>
+
+</body>
+</html>
