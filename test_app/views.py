@@ -1,5 +1,4 @@
 from urllib import request
-from unittest import result
 from django.shortcuts import render
 import numpy as np
 import joblib as jb
@@ -8,6 +7,7 @@ def home(request):
     return render(request,'index.html')
 
 def predict(request):
+    if request.method=='POST':
         TSH =(request.GET['TSH'])
         FTI =(request.GET['FTI'])
         TT4 =(request.GET['TT4'])
