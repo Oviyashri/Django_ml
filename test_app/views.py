@@ -19,7 +19,7 @@ def predict(request):
         pregnant=(request.POST['pregnant'])
         psych=(request.POST['psych'])
         arr=np.array([[TSH, FTI ,TT4, T3,query_hypothyroid,on_thyroxine,sex,pregnant,psych]])
-        model=jb.load('test_app\model.pkl')
+        model=jb.load(open("test_app/model.pkl", 'rb'))
 
         result = model.predict(arr)
 
